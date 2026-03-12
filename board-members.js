@@ -185,17 +185,20 @@ class BoardMembers extends HTMLElement {
         text-transform: uppercase;
       }
 
-      @media (max-width: 1200px) {
+  @media (max-width: 1400px) {
   .board-wrap {
-    max-width: 1080px;
-    padding: 50px 24px 64px;
-  }
+  width: 100%;
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 56px 28px 36px;
+}
 
   .grid {
     grid-template-columns: repeat(4, minmax(0, 1fr));
     column-gap: 26px;
     row-gap: 52px;
   }
+}
 
   .card:nth-child(9) {
     grid-column: 2;
