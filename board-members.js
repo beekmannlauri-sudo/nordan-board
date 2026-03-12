@@ -186,17 +186,25 @@ class BoardMembers extends HTMLElement {
       }
 
       @media (max-width: 1200px) {
-        .board-wrap {
-          max-width: 1080px;
-          padding: 50px 24px 64px;
-        }
+  .board-wrap {
+    max-width: 1080px;
+    padding: 50px 24px 64px;
+  }
 
-        .grid {
-          grid-template-columns: repeat(4, minmax(0, 1fr));
-          column-gap: 26px;
-          row-gap: 52px;
-        }
-      }
+  .grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    column-gap: 26px;
+    row-gap: 52px;
+  }
+
+  .card:nth-child(9) {
+    grid-column: 2;
+  }
+
+  .card:nth-child(10) {
+    grid-column: 3;
+  }
+}
 
       @media (max-width: 900px) {
         .board-wrap {
