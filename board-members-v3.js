@@ -279,4 +279,6 @@ class BoardMembers extends HTMLElement {
   }
 }
 
-customElements.define("board-members", BoardMembers);
+if (!customElements.get("board-members")) {
+  customElements.define("board-members", BoardMembers);
+}
