@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Board</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: #ffffff;
+      color: #1f1f1f;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .board-section {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 56px 28px 72px;
+    }
+
+    .board-header {
+      text-align: center;
+      margin-bottom: 44px;
+    }
+
+    .board-header h1 {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 2.25rem;
+      font-weight: 500;
+      color: #1d1d1d;
+      letter-spacing: 0.01em;
+    }
+
+    .board-divider {
+      width: 56px;
+      height: 2px;
+      background: #cfcfcf;
+      margin: 14px auto 0;
+      border-radius: 999px;
+    }
+
+    .board-grid {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 42px 26px;
+      align-items: start;
+    }
+
+    .member-card {
+      text-align: center;
+    }
+
+    .member-photo {
+      width: 150px;
+      height: 150px;
+      margin: 0 auto 18px;
+      border-radius: 50%;
+      overflow: hidden;
+      background: #f3f3f3;
+      box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.05);
+    }
+
+    .member-photo img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+    }
+
+    .member-name {
+      margin: 0 0 8px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1.1rem;
+      font-style: italic;
+      font-weight: 500;
+      line-height: 1.35;
+      color: #202020;
+    }
+
+    .member-org {
+      margin: 0;
+      font-size: 0.72rem;
+      line-height: 1.45;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: #6a6a6a;
+    }
+
+    @media (max-width: 991px) {
+      .board-section {
+        padding: 48px 24px 64px;
+      }
+
+      .board-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 38px 22px;
+      }
+
+      .member-photo {
+        width: 145px;
+        height: 145px;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .board-section {
+        padding: 40px 20px 56px;
+      }
+
+      .board-header {
+        margin-bottom: 36px;
+      }
+
+      .board-header h1 {
+        font-size: 1.95rem;
+      }
+
+      .board-grid {
+        grid-template-columns: 1fr;
+        gap: 34px;
+      }
+
+      .member-photo {
+        width: 140px;
+        height: 140px;
+        margin-bottom: 16px;
+      }
+
+      .member-name {
+        font-size: 1.05rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <section class="board-section">
+    <div class="board-header">
+      <h1>Board</h1>
+      <div class="board-divider"></div>
+    </div>
+
+    <div class="board-grid">
+      <article class="member-card">
+        <div class="member-photo">
+          <img src="https://static.wixstatic.com/media/5ded79_af84bfe0caea439db1bf8a1b951f4199~mv2.jpg/v1/crop/x_0,y_57,w_408,h_410/fill/w_216,h_217,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/11.jpg" alt="Mariann Skar" />
+        </div>
+        <h2 class="member-name">Mariann Skar</h2>
+        <p class="member-org">President</p>
+      </article>
+
+      <article class="member-card">
+        <div class="member-photo">
+          <img src="https://static.wixstatic.com/media/5ded79_65069d79178144e0ba77ed864d4f9a4c~mv2.jpg/v1/fill/w_216,h_217,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/1731491323600.jpg" alt="Morten Skov Mogensen" />
+        </div>
+        <h2 class="member-name">Morten Skov Mogensen</h2>
+        <p class="member-org">Blue Cross Denmark, Denmark</p>
+      </article>
+
+      <article class="member-card">
+        <div class="member-photo">
+          <img src="https://static.wixstatic.com/media/5ded79_4a62aa69d0d34691b4c00cd1f1d3d7e4~mv2.png/v1/crop/x_0,y_31,w_408,h_422/fill/w_210,h_217,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/85035269_1130891343909028_8153486685464690688_n-removebg-preview_edited.png" alt="Viljam Borrsenko" />
+        </div>
+        <h2 class="member-name">Viljam Borrsenko</h2>
+        <p class="member-org">Public Foundation of Hope, Estonia</p>
+      </article>
+
+      <article class="member-card">
+        <div class="member-photo">
+          <img src="https://static.wixstatic.com/media/5ded79_2eb4cb13f0154b10b4af8ec692587d1c~mv2.jpeg/v1/fill/w_216,h_217,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/Image.jpeg" alt="Edva Jacobsen" />
+        </div>
+        <h2 class="member-name">Edva Jacobsen</h2>
+        <p class="member-org">Blue Cross Faroe Islands, Faroe Islands</p>
+      </article>
+
+      <article class="member-card">
+        <div class="member-photo">
+          <img src="https://static.wixstatic.com/media/5ded79_9f9cd87b29314d1b916d7e73bc93068e~mv2.png/v1/fill/w_210,h_217,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Mikkonen-Juha1.png" alt="Juha Mikkonen" />
+        </div>
+        <h2 class="member-name">Juha Mikkonen</h2>
+        <p class="member-org">EHYT ry, Finland</p>
+      </article>
+
+      <article class="member-card">
+        <div class="member-photo">
+          <img src="https://static.wixstatic.com/media/5ded79_28240f4d746142839de5f9728d9addb8~mv2.jpg/v1/fill/w_210,h_217,al_c,lg_1,q_80,enc_avif,quality_auto/Allalaaditud%20fail%20(1)_jfif.jpg" alt="Adalsteinn Gunnarsson" />
+        </div>
+        <h2 class="member-name">Adalsteinn Gunnarsson</h2>
+        <p class="member-org">IOGT Iceland, Iceland</p>
+      </article>
+
+      <article class="member-card">
+        <div class="member-photo">
+          <img src="https://static.wixstatic.com/media/5ded79_30f8781485b14b8fa4cb2be5e7afb027~mv2.jpg/v1/crop/x_1,y_0,w_493,h_495/fill/w_216,h_217,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/Almers-Ludviks-wp.jpg" alt="Almers Ludviks" />
+        </div>
+        <h2 class="member-name">Almers Ludviks</h2>
+        <p class="member-org">Partneri Association, Latvia</p>
+      </article>
+
+      <article class="member-card">
+        <div class="member-photo">
+          <img src="https://static.wixstatic.com/media/5ded79_5e28c37622df4e2fae1762f02b741f62~mv2.jpg/v1/fill/w_210,h_217,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/EO5i_-DWoAInts8.jpg" alt="Nijole Gostautaite Midttun" />
+        </div>
+        <h2 class="member-name">Nijole Gostautaite Midttun</h2>
+        <p class="member-org">NTAKK, Lithuania</p>
+      </article>
+
+      <article class="member-card">
+        <div class="member-photo">
+          <img src="https://static.wixstatic.com/media/5ded79_e090988dc1ac4f69943d67d9e68913ca~mv2.png/v1/fill/w_216,h_217,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/image_edited.png" alt="Stig Erik Sørheim" />
+        </div>
+        <h2 class="member-name">Stig Erik Sørheim</h2>
+        <p class="member-org">ACTIS, Norway</p>
+      </article>
+
+      <article class="member-card">
+        <div class="member-photo">
+          <img src="https://static.wixstatic.com/media/5ded79_010b3d590ce649949d343fe14d8a3793~mv2.png/v1/crop/x_0,y_28,w_408,h_410/fill/w_216,h_217,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/PM2_Foto-Pierre-Andersson-800x1200__1_-removebg-preview.png" alt="Peter Moilanen" />
+        </div>
+        <h2 class="member-name">Peter Moilanen</h2>
+        <p class="member-org">SLAN, Sweden</p>
+      </article>
+    </div>
+  </section>
+</body>
+</html>
