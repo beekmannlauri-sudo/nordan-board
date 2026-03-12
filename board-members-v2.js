@@ -66,146 +66,195 @@ class BoardMembers extends HTMLElement {
     const title = this.getAttribute("title") || "Board";
 
     const style = `
-      :host {
-        display: block;
-        width: 100%;
-        box-sizing: border-box;
-        color: #1c1c1c;
-        background: transparent;
-      }
+  :host {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    color: #1c1c1c;
+    background: transparent;
+  }
 
-      *, *::before, *::after {
-        box-sizing: border-box;
-      }
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
 
-      .board-wrap {
-        width: 100%;
-        max-width: 1320px;
-        margin: 0 auto;
-        padding: 56px 28px 70px;
-      }
-
-      .board-title {
-        text-align: center;
-        margin-bottom: 48px;
-      }
-
-      .board-title h2 {
-        margin: 0;
-        font-family: Georgia, "Times New Roman", serif;
-        font-size: clamp(34px, 4vw, 52px);
-        font-weight: 500;
-        line-height: 1.08;
-        letter-spacing: 0.02em;
-        color: #1e1e1e;
-      }
-
-      .board-title .line {
-        width: 34px;
-        height: 3px;
-        background: #1e1e1e;
-        margin: 16px auto 0;
-        border-radius: 999px;
-      }
-
-      .grid {
-        display: grid;
-        grid-template-columns: repeat(5, minmax(0, 1fr));
-        column-gap: 28px;
-        row-gap: 58px;
-        align-items: start;
-      }
-
-      .card {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        min-width: 0;
-      }
-
-      .image-wrap {
-        width: min(100%, 210px);
-        aspect-ratio: 1 / 1;
-        border-radius: 50%;
-        overflow: hidden;
-        background: #e7e7e7;
-        margin-bottom: 22px;
-        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
-      }
-
-      .image-wrap img {
-        width: 100%;
-        height: 100%;
-        display: block;
-        object-fit: cover;
-        object-position: center;
-      }
-
-      .name {
-        margin: 0 0 16px;
-        font-family: Georgia, "Times New Roman", serif;
-        font-size: clamp(18px, 1.45vw, 21px);
-        font-style: italic;
-        font-weight: 400;
-        line-height: 1.08;
-        color: #1f1f1f;
-        min-height: 2.3em;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        max-width: 190px;
-      }
-
-      .meta {
-        display: flex;
-        flex-direction: column;
-        gap: 7px;
-        align-items: center;
-        max-width: 190px;
-      }
-
-      .role {
-        margin: 0;
-        font-family: Arial, Helvetica, sans-serif;
-        font-size: 13px;
-        line-height: 1.3;
-        text-transform: uppercase;
-        letter-spacing: 0.04em;
-        color: #111111;
-      }
-
-      .org {
-        margin: 0;
-        font-family: Arial, Helvetica, sans-serif;
-        font-size: 13px;
-        line-height: 1.35;
-        letter-spacing: 0.01em;
-        color: #111111;
-        text-transform: uppercase;
-      }
-
-  @media (max-width: 1400px) {
   .board-wrap {
-  width: 100%;
-  max-width: 1320px;
-  margin: 0 auto;
-  padding: 56px 28px 36px;
-}
+    width: 100%;
+    max-width: 1320px;
+    margin: 0 auto;
+    padding: 56px 28px 36px;
+  }
+
+  .board-title {
+    text-align: center;
+    margin-bottom: 48px;
+  }
+
+  .board-title h2 {
+    margin: 0;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(34px, 4vw, 52px);
+    font-weight: 500;
+    line-height: 1.08;
+    letter-spacing: 0.02em;
+    color: #1e1e1e;
+  }
+
+  .board-title .line {
+    width: 34px;
+    height: 3px;
+    background: #1e1e1e;
+    margin: 16px auto 0;
+    border-radius: 999px;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    column-gap: 28px;
+    row-gap: 58px;
+    align-items: start;
+  }
+
+  .card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    min-width: 0;
+  }
+
+  .image-wrap {
+    width: min(100%, 210px);
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+    overflow: hidden;
+    background: #e7e7e7;
+    margin-bottom: 22px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+  }
+
+  .image-wrap img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .name {
+    margin: 0 0 16px;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(18px, 1.45vw, 21px);
+    font-style: italic;
+    font-weight: 400;
+    line-height: 1.08;
+    color: #1f1f1f;
+    min-height: 2.3em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 190px;
+  }
+
+  .meta {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    align-items: center;
+    max-width: 190px;
+  }
+
+  .role {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    line-height: 1.3;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: #111111;
+  }
+
+  .org {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    line-height: 1.35;
+    letter-spacing: 0.01em;
+    color: #111111;
+    text-transform: uppercase;
+  }
+
+  @media (max-width: 900px) {
+    .board-wrap {
+      padding: 42px 20px 36px;
+    }
+
+    .board-title {
+      margin-bottom: 38px;
+    }
+
+    .grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      column-gap: 24px;
+      row-gap: 42px;
+    }
+
+    .image-wrap {
+      width: min(100%, 220px);
+    }
+
+    .name,
+    .meta {
+      max-width: 220px;
+    }
+  }
+
+  @media (max-width: 560px) {
+    .board-wrap {
+      padding: 34px 16px 30px;
+    }
+
+    .board-title {
+      margin-bottom: 30px;
+    }
+
+    .board-title h2 {
+      font-size: clamp(28px, 8vw, 38px);
+    }
+
+    .grid {
+      grid-template-columns: 1fr;
+      row-gap: 34px;
+    }
+
+    .image-wrap {
+      width: min(100%, 210px);
+      margin-bottom: 18px;
+    }
+
+    .name {
+      min-height: auto;
+      margin-bottom: 12px;
+      max-width: 230px;
+    }
+
+    .meta {
+      max-width: 230px;
+      gap: 6px;
+    }
+
+    .org,
+    .role {
+      font-size: 13px;
+    }
+  }
+`;
 
   .grid {
     grid-template-columns: repeat(4, minmax(0, 1fr));
     column-gap: 26px;
     row-gap: 52px;
-  }
-}
-
-  .card:nth-child(9) {
-    grid-column: 2;
-  }
-
-  .card:nth-child(10) {
-    grid-column: 3;
   }
 }
 
